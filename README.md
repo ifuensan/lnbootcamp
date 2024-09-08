@@ -7,11 +7,11 @@ Esta es una sesión en su mayor parte práctica en donde van a resolver en equip
 ⚠️ Importante: Los términos técnicos siempre se dirán en inglés para facilitar el aprendizaje del idioma y la inmersión en el desarrollo de software de Bitcoin y LN. Ver metodología de traducción.
 Lecturas complementarias
 
-‍Línea de comandos básica (10 min.)
+[‍Línea de comandos básica (10 min.)](https://www.youtube.com/watch?v=BZN7Tqeu8eA)
 
-‍Tutorial de dockers básico (20 min.)
+‍[Tutorial de dockers básico (20 min.)](https://youtu.be/12GnSq2T_ZQ)
 
-Tutorial de dockers práctico (30 min.)
+[Tutorial de dockers práctico (30 min.)](https://youtu.be/chb5d5VKkA4)
 
 ## Preguntas
 🛑 Antes de resolver las preguntas del capítulo, revisa las instrucciones de trabajo de la sesión
