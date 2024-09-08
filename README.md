@@ -37,9 +37,9 @@ Cuando ya se queden ejecutando los nodos en esa consola, abre otra consola de co
 ./run_payment_demo.sh 
 ```
 Este script crea esta topología abriendo canales de Alice ⇾ Bob de Bob ⇾ Chan y Chan ⇾ Dina, todos con 1.000.000 (un millón de satoshis)
-Imagen 1. Apertura de canales Alice-Bob, Bob-Chan, Chan-Dina
 
-![image](https://github.com/user-attachments/assets/3b87f359-4696-4582-a165-88bf9ddfc94f)
+
+![Imagen 1. Apertura de canales Alice-Bob, Bob-Chan, Chan-Dina](https://github.com/user-attachments/assets/3b87f359-4696-4582-a165-88bf9ddfc94f)
 
 Y al final, en ese mismo script, Dina crea un invoice de 10K que es pagado por Alice.
 
