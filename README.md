@@ -30,7 +30,7 @@ Para realizar los ejercicios a continuación debes haber instalado docker-compos
 Debes seguir las instrucciones en donde te muestran cómo ir a la carpeta lnbook/code/docker y lanzar el ejercicio con el comando docker_compose up:
 ```
 cd lnbook/code/docker
-docker_compose up    
+docker-compose up    
 ```
 Cuando ya se queden ejecutando los nodos en esa consola, abre otra consola de comandos y ejecuta el script.
 ```
