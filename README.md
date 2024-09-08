@@ -4,6 +4,7 @@
 Para esta sesión debes haber leído el Capítulo 4: “Lightning Node Software” del Libro Mastering Lightning.
 
 Esta es una sesión en su mayor parte práctica en donde van a resolver en equipo unos ejercicios propuestos similares a los que están en el final del capítulo 4: Tutoriales para instalar nodos de Bitcoin.
+
 ⚠️ Importante: Los términos técnicos siempre se dirán en inglés para facilitar el aprendizaje del idioma y la inmersión en el desarrollo de software de Bitcoin y LN. Ver metodología de traducción.
 Lecturas complementarias
 
