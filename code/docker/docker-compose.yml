@@ -34,7 +34,7 @@ services:
     networks:
       - lnnet
     expose:
-      - "9735"
+      - "9736:9735"
     restart: always
 
   Chan:
@@ -45,7 +45,7 @@ services:
     networks:
       - lnnet
     expose:
-      - "9735"
+      - "9737:9735"
     restart: always
 
   Dina:
@@ -56,5 +56,5 @@ services:
     networks:
       - lnnet
     expose:
-      - "9735"
+      - "9738:9735"
     restart: always

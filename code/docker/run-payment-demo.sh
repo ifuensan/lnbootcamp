@@ -52,7 +52,7 @@ echo
 echo "Getting node IDs"
 alice_address=$(run-in-node Alice "cli getinfo | jq -r .identity_pubkey")
 bob_address=$(run-in-node Bob "cli getinfo | jq -r .id")
-chan_address=$(run-in-node Chan "cli getinfo| jq -r .nodeId")
+chan_address=$(run-in-node Chan "cli getinfo| jq -r .id")
 dina_address=$(run-in-node Dina "cli getinfo | jq -r .identity_pubkey")
 
 # Show node IDs
@@ -69,7 +69,7 @@ wait-for-node Alice "cli getinfo | jq -e \".synced_to_chain == true\""
 echo -n "- Waiting for Bob chain sync..."
 wait-for-node Bob "cli getinfo | jq -e \".blockheight > 100\""
 echo -n "- Waiting for Chan chain sync..."
-wait-for-node Chan "cli getinfo | jq -e \".blockHeight > 100\""
+wait-for-node Chan "cli getinfo | jq -e \".blockheight > 100\""
 echo -n "- Waiting for Dina chain sync..."
 wait-for-node Dina "cli getinfo | jq -e \".synced_to_chain == true\""
 echo "All nodes synched to chain"
