@@ -69,7 +69,7 @@ wait-for-node Alice "cli getinfo | jq -e \".synced_to_chain == true\""
 echo -n "- Waiting for Bob chain sync..."
 wait-for-node Bob "cli getinfo | jq -e \".blockheight > 100\""
 echo -n "- Waiting for Chan chain sync..."
-wait-for-node Chan "cli getinfo | jq -e \".blockHeight > 100\""
+wait-for-node Chan "cli getinfo | jq -e \".blockheight > 100\""
 echo -n "- Waiting for Dina chain sync..."
 wait-for-node Dina "cli getinfo | jq -e \".synced_to_chain == true\""
 echo "All nodes synched to chain"
@@ -112,14 +112,14 @@ run-in-node Bob "cli listchannels | jq -e '.channels[] | select(.destination == 
 	wait-for-node Bob "cli fundchannel ${chan_address} 1000000"
 }
 echo "Chan to Dina"
-run-in-node Chan "cli peers | jq -e '.[] | select(.nodeId == \"${dina_address}\" and .state == \"CONNECTED\")' > /dev/null" \
+run-in-node Chan "cli peers | jq -e '.[] | select(.id == \"${dina_address}\" and .state == \"CONNECTED\")' > /dev/null" \
 && {
 	echo "- Chan already connected to Dina"
 } || {
 	echo "- Open connection from Chan's node to Dina's node"
 	wait-for-node Chan "cli connect --uri=${dina_address}@Dina"
 }
-run-in-node Chan "cli channels | jq -e '.[] | select(.nodeId == \"${dina_address}\" and .state == \"NORMAL\")' > /dev/null" \
+run-in-node Chan "cli channels | jq -e '.[] | select(.id == \"${dina_address}\" and .state == \"NORMAL\")' > /dev/null" \
 && {
 	echo "- Chan->Dina channel already exists"
 } || {
@@ -137,7 +137,7 @@ echo -n "- Waiting for Bob channel confirmation..."
 wait-for-node Bob "cli listchannels | jq -e '.channels[] | select(.destination == \"${chan_address}\" and .active == true)'"
 echo "- Bob->Chan connected"
 echo -n "- Waiting for Chan channel confirmation..."
-wait-for-node Chan "cli channels | jq -e '.[] | select (.nodeId == \"${dina_address}\" and .state == \"NORMAL\")' > /dev/null"
+wait-for-node Chan "cli channels | jq -e '.[] | select (.id == \"${dina_address}\" and .state == \"NORMAL\")' > /dev/null"
 echo "- Chan->Dina connected"
 echo "All channels confirmed"
 
