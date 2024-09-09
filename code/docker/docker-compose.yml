@@ -41,8 +41,8 @@ services:
   Chan:
     container_name: Chan
     build:
-        context: eclair
-    image: lnbook/eclair:latest
+        context: c-lightning
+    image: lnbook/c-lightning:latest
     networks:
       - lnnet
     expose:
