@@ -17,6 +17,8 @@ services:
 
   Alice:
     container_name: Alice
+    depends_on:
+      - bitcoind
     build:
         context: lnd
     image: lnbook/lnd:latest
@@ -28,33 +30,39 @@ services:
 
   Bob:
     container_name: Bob
+    depends_on:
+      - bitcoind    
     build:
       context: c-lightning
     image: lnbook/c-lightning:latest
     networks:
       - lnnet
     expose:
-      - "9735"
+      - "9736"
     restart: always
 
   Chan:
     container_name: Chan
+    depends_on:
+      - bitcoind    
     build:
         context: c-lightning
     image: lnbook/c-lightning:latest
     networks:
       - lnnet
     expose:
-      - "9735"
+      - "9737"
     restart: always
 
   Dina:
     container_name: Dina
+    depends_on:
+      - bitcoind    
     build:
         context: lnd
     image: lnbook/lnd:latest
     networks:
       - lnnet
     expose:
-      - "9735"
+      - "9738"
     restart: always
