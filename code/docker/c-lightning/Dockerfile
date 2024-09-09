@@ -11,8 +11,12 @@ FROM os-base as cl-install
 COPY --from=lnbook/bitcoind:latest /usr/bin/bitcoin-cli /usr/bin
 
 # Set CL_VER ENV from ARG
-ARG CL_VER=0.10.1
+ARG CL_VER=24.08
 ENV CL_VER=${CL_VER}
+
+# Set UBUNTU_VER ENV from ARG
+ARG UBUNTU_VER=24.04
+ENV UBUNTU_VER=${UBUNTU_VER}
 
 RUN apt-get update -qq && apt-get install -yqq \
 		gpg xz-utils libpq5 libsodium23 && \
@@ -20,7 +24,7 @@ RUN apt-get update -qq && apt-get install -yqq \
     rm -rf /var/lib/apt/lists/*
 
 RUN cd /tmp && \
-    curl -# -sLO https://github.com/ElementsProject/lightning/releases/download/v${CL_VER}/clightning-v${CL_VER}-Ubuntu-20.04.tar.xz
+    curl -# -sLO https://github.com/ElementsProject/lightning/releases/download/v${CL_VER}/clightning-v${CL_VER}-Ubuntu-${UBUNTU_VER}.tar.xz
 
 # Verify developer signatures. The `gpg --verify` command will print a
 # couple of warnings about the key not being trusted. That's ok. The
@@ -28,14 +32,15 @@ RUN cd /tmp && \
 # signature".
 ADD devkeys.pem /tmp/devkeys.pem
 RUN gpg --import /tmp/devkeys.pem
-ADD https://github.com/ElementsProject/lightning/releases/download/v0.10.1/SHA256SUMS /tmp/SHA256SUMS
-ADD https://github.com/ElementsProject/lightning/releases/download/v0.10.1/SHA256SUMS.asc /tmp/SHA256SUMS.asc
+ADD https://github.com/ElementsProject/lightning/releases/download/v${CL_VER}/SHA256SUMS /tmp/SHA256SUMS
+ADD https://github.com/ElementsProject/lightning/releases/download/v${CL_VER}/SHA256SUMS.asc /tmp/SHA256SUMS.asc
 RUN cd /tmp && \
     gpg -q --verify SHA256SUMS.asc SHA256SUMS && \
     cat SHA256SUMS && \
     sha256sum --ignore-missing -c SHA256SUMS
 
-RUN tar -xvf /tmp/clightning-v${CL_VER}-Ubuntu-20.04.tar.xz -C /
+RUN tar -xvf /tmp/clightning-v${CL_VER}-Ubuntu-${UBUNTU_VER}.tar.xz -C /
+
 
 ADD https://raw.githubusercontent.com/ElementsProject/lightning/master/contrib/lightning-cli.bash-completion /usr/share/bash-completion/completions/lightning-cli
 
