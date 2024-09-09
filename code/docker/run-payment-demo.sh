@@ -52,7 +52,7 @@ echo
 echo "Getting node IDs"
 alice_address=$(run-in-node Alice "cli getinfo | jq -r .identity_pubkey")
 bob_address=$(run-in-node Bob "cli getinfo | jq -r .id")
-chan_address=$(run-in-node Chan "cli getinfo| jq -r .nodeId")
+chan_address=$(run-in-node Chan "cli getinfo| jq -r .id")
 dina_address=$(run-in-node Dina "cli getinfo | jq -r .identity_pubkey")
 
 # Show node IDs
