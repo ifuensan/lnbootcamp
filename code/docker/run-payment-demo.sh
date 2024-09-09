@@ -124,7 +124,8 @@ run-in-node Chan "cli channels | jq -e '.[] | select(.id == \"${dina_address}\" 
 	echo "- Chan->Dina channel already exists"
 } || {
 	echo "- Create payment channel Chan->Dina"
-	wait-for-node Chan "cli open --nodeId=${dina_address} --fundingSatoshis=1000000"
+	#wait-for-node Chan "cli open --nodeId=${dina_address} --fundingSatoshis=1000000"
+	wait-for-node Chan "cli fundchannel ${dina_address} 1000000"
 }
 echo "All channels created"
 echo "======================================================"
