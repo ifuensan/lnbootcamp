@@ -112,14 +112,14 @@ run-in-node Bob "cli listchannels | jq -e '.channels[] | select(.destination == 
 	wait-for-node Bob "cli fundchannel ${chan_address} 1000000"
 }
 echo "Chan to Dina"
-run-in-node Chan "cli peers | jq -e '.[] | select(.nodeId == \"${dina_address}\" and .state == \"CONNECTED\")' > /dev/null" \
+run-in-node Chan "cli peers | jq -e '.[] | select(.id == \"${dina_address}\" and .state == \"CONNECTED\")' > /dev/null" \
 && {
 	echo "- Chan already connected to Dina"
 } || {
 	echo "- Open connection from Chan's node to Dina's node"
 	wait-for-node Chan "cli connect --uri=${dina_address}@Dina"
 }
-run-in-node Chan "cli channels | jq -e '.[] | select(.nodeId == \"${dina_address}\" and .state == \"NORMAL\")' > /dev/null" \
+run-in-node Chan "cli channels | jq -e '.[] | select(.id == \"${dina_address}\" and .state == \"NORMAL\")' > /dev/null" \
 && {
 	echo "- Chan->Dina channel already exists"
 } || {
@@ -137,7 +137,7 @@ echo -n "- Waiting for Bob channel confirmation..."
 wait-for-node Bob "cli listchannels | jq -e '.channels[] | select(.destination == \"${chan_address}\" and .active == true)'"
 echo "- Bob->Chan connected"
 echo -n "- Waiting for Chan channel confirmation..."
-wait-for-node Chan "cli channels | jq -e '.[] | select (.nodeId == \"${dina_address}\" and .state == \"NORMAL\")' > /dev/null"
+wait-for-node Chan "cli channels | jq -e '.[] | select (.id == \"${dina_address}\" and .state == \"NORMAL\")' > /dev/null"
 echo "- Chan->Dina connected"
 echo "All channels confirmed"
 
