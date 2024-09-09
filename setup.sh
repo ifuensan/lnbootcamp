@@ -3,4 +3,4 @@
 #
 apt update
 cd code/docker
-docker compose up
+docker compose up -d
