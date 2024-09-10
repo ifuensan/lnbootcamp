@@ -16,7 +16,7 @@ Lecturas complementarias
 
 ## Preguntas
 🛑 Antes de resolver las preguntas del capítulo, revisa las instrucciones de trabajo de la sesión
-aquí
+[aquí](https://www.libreriadesatoshi.com/private-mln/lightning-welcome-page)
 
 - Why was Segwit an essential upgrade to the base layer for Lightning?
 - Is using docker containers the best way to have a node in the lightning network?
