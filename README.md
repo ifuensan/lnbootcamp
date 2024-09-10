@@ -27,13 +27,13 @@ Esta es una sesión en su mayor parte práctica en donde van a resolver en equip
 Para realizar los ejercicios a continuación debes haber instalado docker-compose como explican en el capítulo 4, de acuerdo al ejemplo que hay al final de ese capítulo en el título “Building a Complete Network of Diverse Lightning Nodes”
 
 Debes seguir las instrucciones en donde te muestran cómo ir a la carpeta lnbook/code/docker y lanzar el ejercicio con el comando docker_compose up:
-```
+```bash
 cd lnbook/code/docker
 //docker-compose up
 docker compose up   
 ```
 Cuando ya se queden ejecutando los nodos en esa consola, abre otra consola de comandos y ejecuta el script.
-```
+```bash
 ./run_payment_demo.sh 
 ```
 Este script crea esta topología abriendo canales de Alice ⇾ Bob de Bob ⇾ Chan y Chan ⇾ Dina, todos con 1.000.000 (un millón de satoshis)
