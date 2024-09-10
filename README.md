@@ -5,18 +5,17 @@ Para esta sesión debes haber leído el Capítulo 4: “Lightning Node Software�
 
 Esta es una sesión en su mayor parte práctica en donde van a resolver en equipo unos ejercicios propuestos similares a los que están en el final del capítulo 4: Tutoriales para instalar nodos de Bitcoin.
 
-⚠️ Importante: Los términos técnicos siempre se dirán en inglés para facilitar el aprendizaje del idioma y la inmersión en el desarrollo de software de Bitcoin y LN. Ver metodología de traducción.
-Lecturas complementarias
+> ⚠️ Importante: Los términos técnicos siempre se dirán en inglés para facilitar el aprendizaje del idioma y la inmersión en el desarrollo de software de Bitcoin y LN. [Ver metodología de traducción](https://docs.google.com/document/d/1uPy771hf2xUElcaOR_Sk9NTqODeg9QZENYWL9leQc1g/edit?usp=sharing).
 
-[‍Línea de comandos básica (10 min.)](https://www.youtube.com/watch?v=BZN7Tqeu8eA)
+## Lecturas complementarias
+- [‍Línea de comandos básica (10 min.)](https://www.youtube.com/watch?v=BZN7Tqeu8eA)
 
-‍[Tutorial de dockers básico (20 min.)](https://youtu.be/12GnSq2T_ZQ)
+- ‍[Tutorial de dockers básico (20 min.)](https://youtu.be/12GnSq2T_ZQ)
 
-[Tutorial de dockers práctico (30 min.)](https://youtu.be/chb5d5VKkA4)
+- [Tutorial de dockers práctico (30 min.)](https://youtu.be/chb5d5VKkA4)
 
 ## Preguntas
-🛑 Antes de resolver las preguntas del capítulo, revisa las instrucciones de trabajo de la sesión
-[aquí](https://www.libreriadesatoshi.com/private-mln/lightning-welcome-page)
+> 🛑 Antes de resolver las preguntas del capítulo, revisa las instrucciones de trabajo de la sesión [aquí](https://www.libreriadesatoshi.com/private-mln/lightning-welcome-page)
 
 - Why was Segwit an essential upgrade to the base layer for Lightning?
 - Is using docker containers the best way to have a node in the lightning network?
